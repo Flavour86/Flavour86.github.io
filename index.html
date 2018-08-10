@@ -252,155 +252,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/关于移动端布局插件flexble的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Dianen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江典恩博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/关于移动端布局插件flexble的使用/" itemprop="url">关于移动端布局插件flexble的使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
-                2018-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/插件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">插件使用</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="关于移动端布局插件flexble的使用"><a href="#关于移动端布局插件flexble的使用" class="headerlink" title="关于移动端布局插件flexble的使用"></a>关于移动端布局插件flexble的使用</h1><h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><p>虽然H5的页面与PC的Web页面相比简单了不少，但让我们头痛的事情是要想尽办法让页面能适配众多不同的终端设备</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在页面的头部添加flexible_css以及flexible.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://g.tbcdn.cn/mtb/lib-flexible/&#123;&#123;version&#125;&#125;/??flexible_css.js,flexible.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>然后再把css中的px 转化成rem，以设计稿的尺寸 / 10 为基准，<br>如：750px 的设计稿，那1rem = 750px / 10 就是75px</p>
-<h3 id="css预处理器"><a href="#css预处理器" class="headerlink" title="css预处理器"></a>css预处理器</h3><p>也可以配合sass 或者 post-css， 统一将px转化成rem进行处理</p>
-<p>sass 类似以下这种处理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@function px2rem($px, $base-font-size: 75px) &#123;</span><br><span class="line">    @if (unitless($px)) &#123;</span><br><span class="line">        @warn &quot;Assuming #&#123;$px&#125; to be in pixels, attempting to convert it into pixels for you&quot;;</span><br><span class="line">    &#125; @else if (unit($px) == rem) &#123;</span><br><span class="line">        @return $px;</span><br><span class="line">    &#125;</span><br><span class="line">    @return ($px / $base-font-size) * 1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="文章链接"><a href="#文章链接" class="headerlink" title="文章链接"></a>文章链接</h3><p><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="noopener">link</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/AlloyTouch插件心得/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,7 +399,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/eslint配置介绍/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiang Dianen">
@@ -567,7 +418,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/10/eslint配置介绍/" itemprop="url">eslint配置介绍</a></h1>
+                <a class="post-title-link" href="/2018/08/10/闭包/" itemprop="url">浅谈闭包</a></h1>
         
 
         <div class="post-meta">
@@ -589,6 +440,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随谈/" itemprop="url" rel="index">
+                    <span itemprop="name">随谈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -619,7 +492,195 @@
       
         
           
-            <h1 id="eslint配置介绍"><a href="#eslint配置介绍" class="headerlink" title="eslint配置介绍"></a>eslint配置介绍</h1><p>具体配置 可参照 <a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="noopener">官网</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    //执行脚本的环境</span><br><span class="line">  &quot;env&quot;: &#123;</span><br><span class="line">    &quot;browser&quot;: true,</span><br><span class="line">    &quot;node&quot;: true,</span><br><span class="line">    &quot;commonjs&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  //用babel-eslint 解析</span><br><span class="line">  &quot;parser&quot;: &quot;babel-eslint &quot;,</span><br><span class="line">  //全局变量</span><br><span class="line">  &quot;globals&quot;: &#123;</span><br><span class="line">    &quot;var1&quot;: true,</span><br><span class="line">    &quot;var2&quot;: false</span><br><span class="line">  &#125;，</span><br><span class="line">  //从配置文件拓展启动的规则集</span><br><span class="line">  &quot;extends&quot; : [</span><br><span class="line">    &quot;standard&quot;,</span><br><span class="line">    &quot;standard-react&quot;,</span><br><span class="line">    ...</span><br><span class="line">  ],</span><br><span class="line">  //指示你要使用哪些附加语言功能的对象</span><br><span class="line">  &quot;ecmaFeatures&quot;: &#123;</span><br><span class="line">    // lambda表达式</span><br><span class="line">    &quot;arrowFunctions&quot;: true,</span><br><span class="line">    // 解构赋值</span><br><span class="line">    &quot;destructuring&quot;: true,</span><br><span class="line">    // class</span><br><span class="line">    &quot;classes&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#函数参数的默认值</span><br><span class="line">    &quot;defaultParams&quot;: true,</span><br><span class="line">    // 块级作用域，允许使用let const</span><br><span class="line">    &quot;blockBindings&quot;: true,</span><br><span class="line">    // 允许使用模块，模块内默认严格模式</span><br><span class="line">    &quot;modules&quot;: true,</span><br><span class="line">    // 允许字面量定义对象时，用表达式做属性名</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/object#属性名表达式</span><br><span class="line">    &quot;objectLiteralComputedProperties&quot;: true,</span><br><span class="line">    // 允许对象字面量方法名简写</span><br><span class="line">    /*var o = &#123;</span><br><span class="line">        method() &#123;</span><br><span class="line">          return &quot;Hello!&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;;</span><br><span class="line"></span><br><span class="line">     等同于</span><br><span class="line"></span><br><span class="line">     var o = &#123;</span><br><span class="line">       method: function() &#123;</span><br><span class="line">         return &quot;Hello!&quot;;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;;</span><br><span class="line">    */</span><br><span class="line">    &quot;objectLiteralShorthandMethods&quot;: true,</span><br><span class="line">    /*</span><br><span class="line">      对象字面量属性名简写</span><br><span class="line">      var foo = &apos;bar&apos;;</span><br><span class="line">      var baz = &#123;foo&#125;;</span><br><span class="line">      baz // &#123;foo: &quot;bar&quot;&#125;</span><br><span class="line"></span><br><span class="line">      // 等同于</span><br><span class="line">      var baz = &#123;foo: foo&#125;;</span><br><span class="line">    */</span><br><span class="line">    &quot;objectLiteralShorthandProperties&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#rest参数</span><br><span class="line">    &quot;restParams&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#扩展运算符</span><br><span class="line">    &quot;spread&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/iterator#for---of循环</span><br><span class="line">    &quot;forOf&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/generator</span><br><span class="line">    &quot;generators&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/string#模板字符串</span><br><span class="line">    &quot;templateStrings&quot;: true,</span><br><span class="line">    &quot;superInFunctions&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/object#对象的扩展运算符</span><br><span class="line">    &quot;experimentalObjectRestSpread&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 详细参见 http://eslint.org/docs/rules/</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    // 定义对象的set存取器属性时，强制定义get</span><br><span class="line">    &quot;accessor-pairs&quot;: 2,</span><br><span class="line">    // 指定数组的元素之间要以空格隔开(,后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格</span><br><span class="line">    &quot;array-bracket-spacing&quot;: [2, &quot;never&quot;],</span><br><span class="line">    // 在块级作用域外访问块内定义的变量是否报错提示</span><br><span class="line">    &quot;block-scoped-var&quot;: 0,</span><br><span class="line">    // if while function 后面的&#123;必须与if在同一行，java风格。</span><br><span class="line">    &quot;brace-style&quot;: [2, &quot;1tbs&quot;, &#123; &quot;allowSingleLine&quot;: true &#125;],</span><br><span class="line">    // 双峰驼命名格式</span><br><span class="line">    &quot;camelcase&quot;: 2,</span><br><span class="line">    // 数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号，</span><br><span class="line">    // always-multiline：多行模式必须带逗号，单行模式不能带逗号</span><br><span class="line">    &quot;comma-dangle&quot;: [2, &quot;never&quot;],</span><br><span class="line">    // 控制逗号前后的空格</span><br><span class="line">    &quot;comma-spacing&quot;: [2, &#123; &quot;before&quot;: false, &quot;after&quot;: true &#125;],</span><br><span class="line">    // 控制逗号在行尾出现还是在行首出现</span><br><span class="line">    // http://eslint.org/docs/rules/comma-style</span><br><span class="line">    &quot;comma-style&quot;: [2, &quot;last&quot;],</span><br><span class="line">    // 圈复杂度</span><br><span class="line">    &quot;complexity&quot;: [2,9],</span><br><span class="line">    // 以方括号取对象属性时，[ 后面和 ] 前面是否需要空格, 可选参数 never, always</span><br><span class="line">    &quot;computed-property-spacing&quot;: [2,&quot;never&quot;],</span><br><span class="line">    // 强制方法必须返回值，TypeScript强类型，不配置</span><br><span class="line">    &quot;consistent-return&quot;: 0,</span><br><span class="line">    // 用于指统一在回调函数中指向this的变量名，箭头函数中的this已经可以指向外层调用者，应该没卵用了</span><br><span class="line">    // e.g [0,&quot;that&quot;] 指定只能 var that = this. that不能指向其他任何值，this也不能赋值给that以外的其他值</span><br><span class="line">    &quot;consistent-this&quot;: 0,</span><br><span class="line">    // 强制在子类构造函数中用super()调用父类构造函数，TypeScrip的编译器也会提示</span><br><span class="line">    &quot;constructor-super&quot;: 0,</span><br><span class="line">    // if else while for do后面的代码块是否需要&#123; &#125;包围，参数：</span><br><span class="line">    //    multi  只有块中有多行语句时才需要&#123; &#125;包围</span><br><span class="line">    //    multi-line  只有块中有多行语句时才需要&#123; &#125;包围, 但是块中的执行语句只有一行时，</span><br><span class="line">    //                   块中的语句只能跟和if语句在同一行。if (foo) foo++; else doSomething();</span><br><span class="line">    //    multi-or-nest 只有块中有多行语句时才需要&#123; &#125;包围, 如果块中的执行语句只有一行，执行语句可以零另起一行也可以跟在if语句后面</span><br><span class="line">    //    [2, &quot;multi&quot;, &quot;consistent&quot;] 保持前后语句的&#123; &#125;一致</span><br><span class="line">    //    default: [2, &quot;all&quot;] 全都需要&#123; &#125;包围</span><br><span class="line">    &quot;curly&quot;: [2, &quot;all&quot;],</span><br><span class="line">    // switch语句强制default分支，也可添加 // no default 注释取消此次警告</span><br><span class="line">    &quot;default-case&quot;: 2,</span><br><span class="line">    // 强制object.key 中 . 的位置，参数:</span><br><span class="line">    //      property，&apos;.&apos;号应与属性在同一行</span><br><span class="line">    //      object, &apos;.&apos; 号应与对象名在同一行</span><br><span class="line">    &quot;dot-location&quot;: [2, &quot;property&quot;],</span><br><span class="line">    // 强制使用.号取属性</span><br><span class="line">    //    参数： allowKeywords：true 使用保留字做属性名时，只能使用.方式取属性</span><br><span class="line">    //                          false 使用保留字做属性名时, 只能使用[]方式取属性 e.g [2, &#123;&quot;allowKeywords&quot;: false&#125;]</span><br><span class="line">    //           allowPattern:  当属性名匹配提供的正则表达式时，允许使用[]方式取值,否则只能用.号取值 e.g [2, &#123;&quot;allowPattern&quot;: &quot;^[a-z]+(_[a-z]+)+$&quot;&#125;]</span><br><span class="line">    &quot;dot-notation&quot;: [2, &#123;&quot;allowKeywords&quot;: true&#125;],</span><br><span class="line">    // 文件末尾强制换行</span><br><span class="line">    &quot;eol-last&quot;: 2,</span><br><span class="line">    // 使用 === 替代 ==</span><br><span class="line">    &quot;eqeqeq&quot;: [2, &quot;allow-null&quot;],</span><br><span class="line">    // 方法表达式是否需要命名</span><br><span class="line">    &quot;func-names&quot;: 0,</span><br><span class="line">    // 方法定义风格，参数：</span><br><span class="line">    //    declaration: 强制使用方法声明的方式，function f()&#123;&#125; e.g [2, &quot;declaration&quot;]</span><br><span class="line">    //    expression：强制使用方法表达式的方式，var f = function() &#123;&#125;  e.g [2, &quot;expression&quot;]</span><br><span class="line">    //    allowArrowFunctions: declaration风格中允许箭头函数。 e.g [2, &quot;declaration&quot;, &#123; &quot;allowArrowFunctions&quot;: true &#125;]</span><br><span class="line">    &quot;func-style&quot;: 0,</span><br><span class="line">    &quot;generator-star-spacing&quot;: [2, &#123; &quot;before&quot;: true, &quot;after&quot;: true &#125;],</span><br><span class="line">    &quot;guard-for-in&quot;: 0,</span><br><span class="line">    &quot;handle-callback-err&quot;: [2, &quot;^(err|error)$&quot; ],</span><br><span class="line">    &quot;indent&quot;: [2, 2, &#123; &quot;SwitchCase&quot;: 1 &#125;],</span><br><span class="line">    &quot;key-spacing&quot;: [2, &#123; &quot;beforeColon&quot;: false, &quot;afterColon&quot;: true &#125;],</span><br><span class="line">    &quot;linebreak-style&quot;: 0,</span><br><span class="line">    &quot;lines-around-comment&quot;: 0,</span><br><span class="line">    &quot;max-nested-callbacks&quot;: 0,</span><br><span class="line">    &quot;new-cap&quot;: [2, &#123; &quot;newIsCap&quot;: true, &quot;capIsNew&quot;: false &#125;],</span><br><span class="line">    &quot;new-parens&quot;: 2,</span><br><span class="line">    &quot;newline-after-var&quot;: 0,</span><br><span class="line">    &quot;no-alert&quot;: 0,</span><br><span class="line">    &quot;no-array-constructor&quot;: 2,</span><br><span class="line">    &quot;no-caller&quot;: 2,</span><br><span class="line">    &quot;no-catch-shadow&quot;: 0,</span><br><span class="line">    &quot;no-cond-assign&quot;: 2,</span><br><span class="line">    &quot;no-console&quot;: 0,</span><br><span class="line">    &quot;no-constant-condition&quot;: 0,</span><br><span class="line">    &quot;no-continue&quot;: 0,</span><br><span class="line">    &quot;no-control-regex&quot;: 2,</span><br><span class="line">    &quot;no-debugger&quot;: 2,</span><br><span class="line">    &quot;no-delete-var&quot;: 2,</span><br><span class="line">    &quot;no-div-regex&quot;: 0,</span><br><span class="line">    &quot;no-dupe-args&quot;: 2,</span><br><span class="line">    &quot;no-dupe-keys&quot;: 2,</span><br><span class="line">    &quot;no-duplicate-case&quot;: 2,</span><br><span class="line">    &quot;no-else-return&quot;: 0,</span><br><span class="line">    &quot;no-empty&quot;: 0,</span><br><span class="line">    &quot;no-empty-character-class&quot;: 2,</span><br><span class="line">    &quot;no-empty-label&quot;: 2,</span><br><span class="line">    &quot;no-eq-null&quot;: 0,</span><br><span class="line">    &quot;no-eval&quot;: 2,</span><br><span class="line">    &quot;no-ex-assign&quot;: 2,</span><br><span class="line">    &quot;no-extend-native&quot;: 2,</span><br><span class="line">    &quot;no-extra-bind&quot;: 2,</span><br><span class="line">    &quot;no-extra-boolean-cast&quot;: 2,</span><br><span class="line">    &quot;no-extra-parens&quot;: 0,</span><br><span class="line">    &quot;no-extra-semi&quot;: 0,</span><br><span class="line">    &quot;no-fallthrough&quot;: 2,</span><br><span class="line">    &quot;no-floating-decimal&quot;: 2,</span><br><span class="line">    &quot;no-func-assign&quot;: 2,</span><br><span class="line">    &quot;no-implied-eval&quot;: 2,</span><br><span class="line">    &quot;no-inline-comments&quot;: 0,</span><br><span class="line">    &quot;no-inner-declarations&quot;: [2, &quot;functions&quot;],</span><br><span class="line">    &quot;no-invalid-regexp&quot;: 2,</span><br><span class="line">    &quot;no-irregular-whitespace&quot;: 2,</span><br><span class="line">    &quot;no-iterator&quot;: 2,</span><br><span class="line">    &quot;no-label-var&quot;: 2,</span><br><span class="line">    &quot;no-labels&quot;: 2,</span><br><span class="line">    &quot;no-lone-blocks&quot;: 2,</span><br><span class="line">    &quot;no-lonely-if&quot;: 0,</span><br><span class="line">    &quot;no-loop-func&quot;: 0,</span><br><span class="line">    &quot;no-mixed-requires&quot;: 0,</span><br><span class="line">    &quot;no-mixed-spaces-and-tabs&quot;: 2,</span><br><span class="line">    &quot;no-multi-spaces&quot;: 2,</span><br><span class="line">    &quot;no-multi-str&quot;: 2,</span><br><span class="line">    &quot;no-multiple-empty-lines&quot;: [2, &#123; &quot;max&quot;: 1 &#125;],</span><br><span class="line">    &quot;no-native-reassign&quot;: 2,</span><br><span class="line">    &quot;no-negated-in-lhs&quot;: 2,</span><br><span class="line">    &quot;no-nested-ternary&quot;: 0,</span><br><span class="line">    &quot;no-new&quot;: 2,</span><br><span class="line">    &quot;no-new-func&quot;: 0,</span><br><span class="line">    &quot;no-new-object&quot;: 2,</span><br><span class="line">    &quot;no-new-require&quot;: 2,</span><br><span class="line">    &quot;no-new-wrappers&quot;: 2,</span><br><span class="line">    &quot;no-obj-calls&quot;: 2,</span><br><span class="line">    &quot;no-octal&quot;: 2,</span><br><span class="line">    &quot;no-octal-escape&quot;: 2,</span><br><span class="line">    &quot;no-param-reassign&quot;: 0,</span><br><span class="line">    &quot;no-path-concat&quot;: 0,</span><br><span class="line">    &quot;no-process-env&quot;: 0,</span><br><span class="line">    &quot;no-process-exit&quot;: 0,</span><br><span class="line">    &quot;no-proto&quot;: 0,</span><br><span class="line">    &quot;no-redeclare&quot;: 2,</span><br><span class="line">    &quot;no-regex-spaces&quot;: 2,</span><br><span class="line">    &quot;no-restricted-modules&quot;: 0,</span><br><span class="line">    &quot;no-return-assign&quot;: 2,</span><br><span class="line">    &quot;no-script-url&quot;: 0,</span><br><span class="line">    &quot;no-self-compare&quot;: 2,</span><br><span class="line">    &quot;no-sequences&quot;: 2,</span><br><span class="line">    &quot;no-shadow&quot;: 0,</span><br><span class="line">    &quot;no-shadow-restricted-names&quot;: 2,</span><br><span class="line">    &quot;no-spaced-func&quot;: 2,</span><br><span class="line">    &quot;no-sparse-arrays&quot;: 2,</span><br><span class="line">    &quot;no-sync&quot;: 0,</span><br><span class="line">    &quot;no-ternary&quot;: 0,</span><br><span class="line">    &quot;no-this-before-super&quot;: 2,</span><br><span class="line">    &quot;no-throw-literal&quot;: 2,</span><br><span class="line">    &quot;no-trailing-spaces&quot;: 2,</span><br><span class="line">    &quot;no-undef&quot;: 2,</span><br><span class="line">    &quot;no-undef-init&quot;: 2,</span><br><span class="line">    &quot;no-undefined&quot;: 0,</span><br><span class="line">    &quot;no-underscore-dangle&quot;: 0,</span><br><span class="line">    &quot;no-unexpected-multiline&quot;: 2,</span><br><span class="line">    &quot;no-unneeded-ternary&quot;: 2,</span><br><span class="line">    &quot;no-unreachable&quot;: 2,</span><br><span class="line">    &quot;no-unused-expressions&quot;: 0,</span><br><span class="line">    &quot;no-unused-vars&quot;: [2, &#123; &quot;vars&quot;: &quot;all&quot;, &quot;args&quot;: &quot;none&quot; &#125;],</span><br><span class="line">    &quot;no-use-before-define&quot;: 0,</span><br><span class="line">    &quot;no-var&quot;: 0,</span><br><span class="line">    &quot;no-void&quot;: 0,</span><br><span class="line">    &quot;no-warning-comments&quot;: 0,</span><br><span class="line">    &quot;no-with&quot;: 2,</span><br><span class="line">    &quot;object-curly-spacing&quot;: 0,</span><br><span class="line">    &quot;object-shorthand&quot;: 0,</span><br><span class="line">    &quot;one-var&quot;: [2, &#123; &quot;initialized&quot;: &quot;never&quot; &#125;],</span><br><span class="line">    &quot;operator-assignment&quot;: 0,</span><br><span class="line">    &quot;operator-linebreak&quot;: [2, &quot;after&quot;, &#123; &quot;overrides&quot;: &#123; &quot;?&quot;: &quot;before&quot;, &quot;:&quot;: &quot;before&quot; &#125; &#125;],</span><br><span class="line">    &quot;padded-blocks&quot;: 0,</span><br><span class="line">    &quot;prefer-const&quot;: 0,</span><br><span class="line">    &quot;quote-props&quot;: 0,</span><br><span class="line">    &quot;quotes&quot;: [2, &quot;single&quot;, &quot;avoid-escape&quot;],</span><br><span class="line">    &quot;radix&quot;: 2,</span><br><span class="line">    &quot;semi&quot;: [2, &quot;never&quot;],</span><br><span class="line">    &quot;semi-spacing&quot;: 0,</span><br><span class="line">    &quot;sort-vars&quot;: 0,</span><br><span class="line">    &quot;space-after-keywords&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-before-blocks&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-before-function-paren&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-in-parens&quot;: [2, &quot;never&quot;],</span><br><span class="line">    &quot;space-infix-ops&quot;: 2,</span><br><span class="line">    &quot;space-return-throw-case&quot;: 2,</span><br><span class="line">    &quot;space-unary-ops&quot;: [2, &#123; &quot;words&quot;: true, &quot;nonwords&quot;: false &#125;],</span><br><span class="line">    &quot;spaced-comment&quot;: [2, &quot;always&quot;, &#123; &quot;markers&quot;: [&quot;global&quot;, &quot;globals&quot;, &quot;eslint&quot;, &quot;eslint-disable&quot;, &quot;*package&quot;, &quot;!&quot;] &#125;],</span><br><span class="line">    &quot;strict&quot;: 0,</span><br><span class="line">    &quot;use-isnan&quot;: 2,</span><br><span class="line">    &quot;valid-jsdoc&quot;: 0,</span><br><span class="line">    &quot;valid-typeof&quot;: 2,</span><br><span class="line">    &quot;vars-on-top&quot;: 0,</span><br><span class="line">    &quot;wrap-iife&quot;: [2, &quot;any&quot;],</span><br><span class="line">    &quot;wrap-regex&quot;: 0,</span><br><span class="line">    &quot;yoda&quot;: [2, &quot;never&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h1 id="浅谈闭包"><a href="#浅谈闭包" class="headerlink" title="浅谈闭包"></a>浅谈闭包</h1><p>闭包是前端开发者必须要了解的一个知识点，说起闭包，它与变量的作用域跟变量的生命周期紧紧联系，那么我们就一起了解下闭包吧：</p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>首先看个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">110</span>;     <span class="comment">// a为局部变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">// 110</span></span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(a);     <span class="comment">// a is not defined  外部访问不到内部的变量</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码就展示变量的作用域的问题，函数外部是拿不到变量a的值，那么怎么样才能拿到a的值呢？<br>且看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">110</span>;     <span class="comment">// a为局部变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">// 110</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = fn();</span><br><span class="line"><span class="keyword">var</span> val = fn2();      <span class="comment">// 110</span></span><br></pre></td></tr></table></figure></p>
+<p>这个时候函数外部val就拿到了a的值，那么到此为止，我们看见了闭包的一个意义：<br><strong>闭包就是能够读取函数内部变量的函数</strong></p>
+<h3 id="变量的生命周期"><a href="#变量的生命周期" class="headerlink" title="变量的生命周期"></a>变量的生命周期</h3><p>对于变量的生命周期分几种情况：</p>
+<ol>
+<li>对于全局的变量来说，它的生命周期是永久的，除非我们主动干掉他，销毁他</li>
+<li>对于存在于函数的中的局部变量的话，就没那么幸运了，当函数执行完毕之后，局部变量就销毁了</li>
+</ol>
+<p>例如下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;    <span class="comment">// fn执行完毕后，变量a就将被销毁了</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></p>
+<p>我们再来看一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        a++</span><br><span class="line">        <span class="built_in">console</span>.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn1 = add()</span><br><span class="line">fn1()  <span class="comment">// a = 1</span></span><br><span class="line">fn1()  <span class="comment">// a = 2</span></span><br></pre></td></tr></table></figure></p>
+<p>在这段代码里面 局部变量a就保存下来了，并没有被销毁，正是由于闭包的缘故，返回的这个function里面还有用到a 所以a就被保存下来了</p>
+<h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><ol>
+<li><p>可以封装私有变量,可以吧一些不需要暴露出去的私有变量封装在函数内部，这样就会减少全局变量的污染，而且也不会造成变量名冲突等等情况发生</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cache = &#123;&#125;;     <span class="comment">// 将cache放入函数内部，避免被其他地方修改</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.join.call(<span class="built_in">arguments</span>, <span class="string">','</span>);</span><br><span class="line">        <span class="keyword">if</span> (args <span class="keyword">in</span> cache) &#123;</span><br><span class="line">            <span class="keyword">return</span> cache[args];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">            a += <span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[args] = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模块化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">win, undefined</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">    obj.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 最后把想要暴露出去的内容可以挂载到window上</span></span><br><span class="line">    win.obj = obj;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将变量的使用延长</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var monitor = (function() &#123;</span><br><span class="line">    var imgs = [];</span><br><span class="line">    return function(src)&#123;</span><br><span class="line">        var img = new Image();</span><br><span class="line">        imgs.push(img);</span><br><span class="line">        img.src = src;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">monitor(&apos;http://dd.com/srp.gif&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="闭包引起的坑"><a href="#闭包引起的坑" class="headerlink" title="闭包引起的坑"></a>闭包引起的坑</h3><p>看一段经典的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aLi.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">            aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(i);     <span class="comment">// ?</span></span></span><br><span class="line"><span class="undefined">            &#125;;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这里无论如何点返回的都是4，因为onclick是一个异步的操作，当点击的时候，循环都已经结束了，这时候i的值已经是4了，如果想要返回0,1,2,3,4看下面的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aLi.length; i++) &#123;</span><br><span class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;    <span class="comment">// n为对应的索引值</span></span><br><span class="line">                aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(n);     <span class="comment">// 0, 1, 2, 3</span></span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;)(i);  <span class="comment">// 这里i每循环一次都存一下，然后把0,1,2,3传给上面的形参n</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>用立即执行函数，把i的值存下来，当使用的时候就可以拿到循环当时的值</p>
+<h4 id="内存泄露问题"><a href="#内存泄露问题" class="headerlink" title="内存泄露问题"></a>内存泄露问题</h4><p>过度的使用闭包，就造成很多变量无法销毁，就会导致内存的泄露，所以当有些变量被使用完之后，如果没有存在的必要了，应当及时的释放掉，减少内存的开销，如何释放呢？直接把引用中的变量设为null 即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/项目心得/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Dianen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江典恩博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/项目心得/" itemprop="url">项目心得总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
+                2018-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心得/" itemprop="url" rel="index">
+                    <span itemprop="name">心得</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-慎用element-innerHTML："><a href="#1-慎用element-innerHTML：" class="headerlink" title="1. 慎用element.innerHTML："></a>1. 慎用element.innerHTML：</h1><p>因为有的时候原先dom里面的一些元素注册了一些事件，当你直接innerHTML的时候，会直接替换掉那些已经注册了事件的dom元素，会导致你的一些js效果出现问题，而且在页面的性能上也有造成不小的消耗，所以说需要更新页面的数据的时候，需要最小程度的更新dom，例如有个场景是渲染一张图片，而这个图片会随着某些情况进行渲染不同的图片，代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  //图片的容器</span><br></pre></td></tr></table></figure></p>
+<p>刚开始的时候 我们可以用innerHTML的模式插入一个dom<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>).innerHTML = <span class="string">'&lt;img src= "..." /&gt;'</span></span><br></pre></td></tr></table></figure></p>
+<p>当第二次要重新改的时候，我们就要判断里面是否有元素了，所以代码应该这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container = <span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>)</span><br><span class="line"><span class="keyword">if</span> (container.querySelector(<span class="string">'img'</span>))&#123;</span><br><span class="line">    container.querySelector(<span class="string">'img'</span>).src = <span class="string">'...'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这样就避免了页面重排，也避免了如果之前的img 注册了一些事件，那该事件就会被移除</span></span><br></pre></td></tr></table></figure></p>
+<p>这里只是提供一些思想，代码只是举例，不可照搬</p>
+<h1 id="2-注册事件"><a href="#2-注册事件" class="headerlink" title="2. 注册事件"></a>2. 注册事件</h1><ol>
+<li>注册事件的时候最好不要在有可能经常执行的方法上注册，例如react中的render方法中，因为render方法会随时执行，这时候没执行一次，就会去注册一次，显然是不妥的</li>
+<li>在dom中注册事件的时候最好使用事件委托，好处就是提高页面的性能，也不容易出现dom更新的时候出现，原先注册事件的dom不在了，从而引起一系列的问题，而且新来的dom也一样会有事件响应<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>222<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>444<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通常在li上注册事件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">"ul1"</span>);</span><br><span class="line">    <span class="keyword">var</span> aLi = oUl.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aLi.length;i++)&#123;</span><br><span class="line">        aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="number">123</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用事件委托<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">"ul1"</span>);</span><br><span class="line">　　oUl.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">　　　　<span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event;</span><br><span class="line">　　　　<span class="keyword">var</span> target = ev.target || ev.srcElement;</span><br><span class="line">　　　　<span class="keyword">if</span>(target.nodeName.toLowerCase() == <span class="string">'li'</span>)&#123;</span><br><span class="line">　 　　　　　　	alert(<span class="number">123</span>);</span><br><span class="line">　　　　　　　  alert(target.innerHTML);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果li数量很多的话，将大大减少dom的操作，优化的性能可想而知!</p>
+<h1 id="3-资源选择性的require方式"><a href="#3-资源选择性的require方式" class="headerlink" title="3. 资源选择性的require方式"></a>3. 资源选择性的require方式</h1><p>在业务场景中会遇到一种情况就是，比如一个logo 有中文，英文2中形式，这个时候有些人是这样处理的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> language = system.getLanguage()</span><br><span class="line"><span class="keyword">let</span> logo</span><br><span class="line"><span class="keyword">if</span> (language === <span class="string">'zh-CN'</span>) &#123;</span><br><span class="line">    logo = <span class="built_in">require</span>(<span class="string">'中文地址'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    logo = <span class="built_in">require</span>(<span class="string">'英文地址'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样处理有个问题是如果系统新增了一个语言的话，比如阿拉伯语，这里可能就要增加一个<code>else if ()</code>，显然这种方式代码看上去比较繁重，而且后续的维护也不太方便，我们推荐使用下面这种方法，代码如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> language = system.getLanguage()</span><br><span class="line"><span class="keyword">const</span> logo = <span class="built_in">require</span>(path + language + <span class="string">'.jpg|.png'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这时候只需要把图片配成zh—CN.jpg，或者en-US.jpg的模式就可以了，随便你加多少个语言，我们加个图片就可以了，简单2句话搞定，不需要太多的代码，简单优雅，而且维护起来方便，改图片名称，总比改代码代价小的多的多</p>
+<h1 id="4-缓存机制提高用户体验"><a href="#4-缓存机制提高用户体验" class="headerlink" title="4. 缓存机制提高用户体验"></a>4. 缓存机制提高用户体验</h1><p>当有些数据不会时时更新的情况下，可以进行缓存处理，就是在去数据之前，先去渲染缓存，然后去取数据，取好的数据跟缓存的数据对比，只有有变化的时候再去重新更新dom的数据，这样用户就不会在看到数据之前 页面可能会有段空白期，体验上感觉会舒适一些</p>
+<h1 id="5-取dom一些属性的问题"><a href="#5-取dom一些属性的问题" class="headerlink" title="5. 取dom一些属性的问题"></a>5. 取dom一些属性的问题</h1><p>看下面代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendDom</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">    div.className = <span class="string">'testDom'</span></span><br><span class="line">    <span class="keyword">const</span> height = div.offsetHeight</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">&#125;</span><br><span class="line">appendDom();</span><br></pre></td></tr></table></figure>
+<p>在上面代码中 height的值会是null，因为这个时候，dom并没有插入到页面的body中去，所以这个时候offsetHeight这个时候是null的，所以取height需要确保dom已经插入到页面中的时候才去取,代码可以修改成：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> height, div</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">appendDom</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">    div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">    div.className = <span class="string">'testDom'</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">    cb &amp;&amp; cb()</span><br><span class="line">&#125;</span><br><span class="line">appendDom(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    height = div.offsetHeight</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这时候就可以取到offsetHeight了</p>
 
           
         
@@ -709,6 +770,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随谈/" itemprop="url" rel="index">
+                    <span itemprop="name">随谈</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -984,152 +1067,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Dianen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江典恩博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/闭包/" itemprop="url">浅谈闭包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
-                2018-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="浅谈闭包"><a href="#浅谈闭包" class="headerlink" title="浅谈闭包"></a>浅谈闭包</h1><p>闭包是前端开发者必须要了解的一个知识点，说起闭包，它与变量的作用域跟变量的生命周期紧紧联系，那么我们就一起了解下闭包吧：</p>
-<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>首先看个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">110</span>;     <span class="comment">// a为局部变量</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">// 110</span></span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(a);     <span class="comment">// a is not defined  外部访问不到内部的变量</span></span><br></pre></td></tr></table></figure></p>
-<p>上面代码就展示变量的作用域的问题，函数外部是拿不到变量a的值，那么怎么样才能拿到a的值呢？<br>且看下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">110</span>;     <span class="comment">// a为局部变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">// 110</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = fn();</span><br><span class="line"><span class="keyword">var</span> val = fn2();      <span class="comment">// 110</span></span><br></pre></td></tr></table></figure></p>
-<p>这个时候函数外部val就拿到了a的值，那么到此为止，我们看见了闭包的一个意义：<br><strong>闭包就是能够读取函数内部变量的函数</strong></p>
-<h3 id="变量的生命周期"><a href="#变量的生命周期" class="headerlink" title="变量的生命周期"></a>变量的生命周期</h3><p>对于变量的生命周期分几种情况：</p>
-<ol>
-<li>对于全局的变量来说，它的生命周期是永久的，除非我们主动干掉他，销毁他</li>
-<li>对于存在于函数的中的局部变量的话，就没那么幸运了，当函数执行完毕之后，局部变量就销毁了</li>
-</ol>
-<p>例如下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;    <span class="comment">// fn执行完毕后，变量a就将被销毁了</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></p>
-<p>我们再来看一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        a++</span><br><span class="line">        <span class="built_in">console</span>.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn1 = add()</span><br><span class="line">fn1()  <span class="comment">// a = 1</span></span><br><span class="line">fn1()  <span class="comment">// a = 2</span></span><br></pre></td></tr></table></figure></p>
-<p>在这段代码里面 局部变量a就保存下来了，并没有被销毁，正是由于闭包的缘故，返回的这个function里面还有用到a 所以a就被保存下来了</p>
-<h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><ol>
-<li><p>可以封装私有变量,可以吧一些不需要暴露出去的私有变量封装在函数内部，这样就会减少全局变量的污染，而且也不会造成变量名冲突等等情况发生</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cache = &#123;&#125;;     <span class="comment">// 将cache放入函数内部，避免被其他地方修改</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.join.call(<span class="built_in">arguments</span>, <span class="string">','</span>);</span><br><span class="line">        <span class="keyword">if</span> (args <span class="keyword">in</span> cache) &#123;</span><br><span class="line">            <span class="keyword">return</span> cache[args];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">            a += <span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[args] = a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模块化</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">win, undefined</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">    obj.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 最后把想要暴露出去的内容可以挂载到window上</span></span><br><span class="line">    win.obj = obj;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将变量的使用延长</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var monitor = (function() &#123;</span><br><span class="line">    var imgs = [];</span><br><span class="line">    return function(src)&#123;</span><br><span class="line">        var img = new Image();</span><br><span class="line">        imgs.push(img);</span><br><span class="line">        img.src = src;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">monitor(&apos;http://dd.com/srp.gif&apos;);</span><br></pre></td></tr></table></figure>
-<h3 id="闭包引起的坑"><a href="#闭包引起的坑" class="headerlink" title="闭包引起的坑"></a>闭包引起的坑</h3><p>看一段经典的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aLi.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">            aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(i);     <span class="comment">// ?</span></span></span><br><span class="line"><span class="undefined">            &#125;;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>这里无论如何点返回的都是4，因为onclick是一个异步的操作，当点击的时候，循环都已经结束了，这时候i的值已经是4了，如果想要返回0,1,2,3,4看下面的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aLi.length; i++) &#123;</span><br><span class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;    <span class="comment">// n为对应的索引值</span></span><br><span class="line">                aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(n);     <span class="comment">// 0, 1, 2, 3</span></span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;)(i);  <span class="comment">// 这里i每循环一次都存一下，然后把0,1,2,3传给上面的形参n</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<p>用立即执行函数，把i的值存下来，当使用的时候就可以拿到循环当时的值</p>
-<h4 id="内存泄露问题"><a href="#内存泄露问题" class="headerlink" title="内存泄露问题"></a>内存泄露问题</h4><p>过度的使用闭包，就造成很多变量无法销毁，就会导致内存的泄露，所以当有些变量被使用完之后，如果没有存在的必要了，应当及时的释放掉，减少内存的开销，如何释放呢？直接把引用中的变量设为null 即可</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/跨域请求的几种实现方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1239,149 +1176,6 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2706754-242c854f310e64be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 <h3 id="4、postmessage跨域"><a href="#4、postmessage跨域" class="headerlink" title="4、postmessage跨域"></a>4、postmessage跨域</h3><p>在HTML5中新增了postMessage方法，postMessage可以实现跨文档消息传输（Cross Document Messaging），Internet Explorer 8, Firefox 3, Opera 9, Chrome 3和 Safari 4都支持postMessage。<br>该方法可以通过绑定window的message事件来监听发送跨文档消息传输内容。<br>使用postMessage实现跨域的话原理就类似于jsonp，动态插入iframe标签，再从iframe里面拿回数据</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是一些常用的跨域方案，都各有利弊，比如：jsonp只能发送get请求、服务器跨域需要另起服务器等等，大家可以根据自己项目需求选择适合的解决方案</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/网页前端常见的攻击方式和预防攻击的方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiang Dianen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江典恩博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/网页前端常见的攻击方式和预防攻击的方法/" itemprop="url">网页前端常见的攻击方式和预防攻击的方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
-                2018-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全性/" itemprop="url" rel="index">
-                    <span itemprop="name">安全性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="网页前端常见的攻击方式和预防攻击的方法"><a href="#网页前端常见的攻击方式和预防攻击的方法" class="headerlink" title="网页前端常见的攻击方式和预防攻击的方法"></a>网页前端常见的攻击方式和预防攻击的方法</h1><h3 id="常见攻击"><a href="#常见攻击" class="headerlink" title="常见攻击"></a>常见攻击</h3><p>XSS (Cross Site Script) ，跨站脚本攻击。它指的是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入的恶意html代码会被执行，从而达到恶意用户的特殊目的。XSS属于被动式的攻击，因为其被动且不好利用，所以许多人常呼略其危害性。但是随着前端技术的不断进步富客户端的应用越来越多，这方面的问题越来越受关注。举个简单例子 ： 假如你现在是sns站点上一个用户，发布信息的功能存在漏洞可以执行js 你在 此刻输入一个 恶意脚本，那么当前所有看到你新信息的人的浏览器都会执行这个脚本弹出提示框 （很爽吧 弹出广告 ：）），如果你做一些更为激进行为呢 后果难以想象。<br>CSRF(Cross Site Request Forgery)，跨站点伪造请求。顾名思义就是 通过伪造连接请求在用户不知情的情况下，让用户以自己的身份来完成攻击者需要达到的一些目的。csrf 的攻击不同于xss csrf 需要被攻击者的主动行为触发。这样听来似乎是有“被钓鱼”的嫌疑哈哈。<br>多窗口浏览器这这方面似乎是有助纣为虐的嫌疑，因为打开的新窗口是具有当前所有会话的，如果是单浏览器窗口类似ie6 就不会存在这样的问题，因为每个窗口都是一个独立的进程。举个简单例子 ： 你正在玩白社会， 看到有人发了一个连接，你点击过去，然后这个连接里面伪造了一个送礼物的表单，这仅仅是一个简单的例子，问题可见一般。<br>cookie劫持，通过获取页面的权限，在页面中写一个简单的到恶意站点的请求，并携带用户的cookie 获取cookie后通过cookie 就可以直以被盗用户的身份登录站点。这就是cookie 劫持。举个简单例子： 某人写了一篇很有意思的日志，然后分享给大家，很多人都点击查看并且分享了该日志，一切似乎都很正常，然而写日志的人却另有用心，在日志中偷偷隐藏了一个对站外的请求,那么所有看过这片日志的人都会在不知情的情况下把自己的cookie 发送给了 某人，那么他可以通过任意一个人的cookie 来登录这个人的账户。</p>
-<h3 id="我们该怎么做？"><a href="#我们该怎么做？" class="headerlink" title="我们该怎么做？"></a>我们该怎么做？</h3><p>大致可以分为两类 1 一般用户 2网站开发人员。<br>首先我们来说说做为一个一般的web产品使用者，很多时候我们是被动的，是在不知情的情况下被利用的。那么我们可以：<br>1 对于安全级别较高的web应用访问 需要打开一个独立浏览器窗口。<br>2 对于陌生人发布的链接最好也是复制然后在新开的窗口中打开，当然最好的办法就是无视 – -。<br>对于开发人员来说我们得从相对详细的一些角度来分析：<br>对于xss 攻击 特点是攻击者的代码必须能获取用户浏览器端的执行权限，那么代码是从哪里来的呢，想要杜绝此类攻击出现 其实可以在入口 和出口 进行严格的过滤，这样的双保险应当说99% 的类似问题就被我们解决掉了，另外的1% 是那些蹩脚的浏览器带来的后遗症，相信在未来这种问题会越来越少的。<br>这里我对xss漏洞的形式作了一些整理<br>恶意代码值被作为某一标签的内容显示 （如果输入的是html 则html会被解析）例如你输入用户名 更新后用户名会显示到页面中的某一个标签内 如果你输入的是<br>popper.w<script src="hack.js" type="text/javajscript"></script><br>那么如果不做过滤直接显示到页面， 会引进一个第三方的js 代码并且会执行。<br>策略：在不需要html输入的地方对html 标签 及一些特殊字符( ” &lt; &gt; &amp; 等等 )做过滤，将其转化为不被浏览器解释执行的字符<br>恶意代码被作为某一标签的属性显示（通过用 “ 将属性截断来开辟新的属性 或恶意方法） 这种情况往往是是开发人员为了实现功能可能会在某些dom标签上记录一些用户输入的信息例如你输入的用户名 会在页面中的标签中以 title 的形式出现 这时候 如果 你输入的是精心设计的内容 那么 看看 这个<br><a title="popper.w" onclick="alert(1)">popper.w” onclick=”alert(1)</a><br>这里我实际上输入的内容是“popper.w” onclick=”alert(1)”，当然你可以在上边写更多的内容。<br>策略：对属性中可能存在截断的一些字符进行过滤 属性本身存在的 单引号和双引号都需要进行转码。<br>恶意代码被作为html代码本身显示 (常见的html编辑器) 这种情况存在的问题最多，不再这里举例子了。<br>策略：最好对用户输入的html 标签及标签属性做白名单过滤，也可以对一些存在漏洞的标签和属性进行专门过滤。<br>恶意代码被作为一段json字符串显示 （通过 变量截断 创造新的 恶意的js 变量 甚至是可执行的代码） 这个问题的关键是用户输入的信息可能会成为页面中js 代码的一部分。<br>策略：对属性中可能存在截断的一些字符进行过滤 属性本身存在的 单引号和双引号都需要进行转码。<br>对于crsf 和cookie 劫持<br>特点 隐蔽性比较高 有些时候是先利用xss 漏洞 然后再做 欺骗的<br>策略<br>通过 referer、token 或者 验证码 来检测用户提交。<br>尽量不要在页面的链接中暴漏任何与用户唯一号（用户id）有关的信息。<br>对于用户修改 删除 提交的操作最好都使用post 操作 。<br>避免全站通用的cookie 严格的设置cookie的域。</p>
 
           
         
@@ -1594,6 +1388,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/eslint配置介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Dianen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江典恩博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/eslint配置介绍/" itemprop="url">eslint配置介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
+                2018-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具使用/" itemprop="url" rel="index">
+                    <span itemprop="name">工具使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="eslint配置介绍"><a href="#eslint配置介绍" class="headerlink" title="eslint配置介绍"></a>eslint配置介绍</h1><p>具体配置 可参照 <a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="noopener">官网</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    //执行脚本的环境</span><br><span class="line">  &quot;env&quot;: &#123;</span><br><span class="line">    &quot;browser&quot;: true,</span><br><span class="line">    &quot;node&quot;: true,</span><br><span class="line">    &quot;commonjs&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  //用babel-eslint 解析</span><br><span class="line">  &quot;parser&quot;: &quot;babel-eslint &quot;,</span><br><span class="line">  //全局变量</span><br><span class="line">  &quot;globals&quot;: &#123;</span><br><span class="line">    &quot;var1&quot;: true,</span><br><span class="line">    &quot;var2&quot;: false</span><br><span class="line">  &#125;，</span><br><span class="line">  //从配置文件拓展启动的规则集</span><br><span class="line">  &quot;extends&quot; : [</span><br><span class="line">    &quot;standard&quot;,</span><br><span class="line">    &quot;standard-react&quot;,</span><br><span class="line">    ...</span><br><span class="line">  ],</span><br><span class="line">  //指示你要使用哪些附加语言功能的对象</span><br><span class="line">  &quot;ecmaFeatures&quot;: &#123;</span><br><span class="line">    // lambda表达式</span><br><span class="line">    &quot;arrowFunctions&quot;: true,</span><br><span class="line">    // 解构赋值</span><br><span class="line">    &quot;destructuring&quot;: true,</span><br><span class="line">    // class</span><br><span class="line">    &quot;classes&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#函数参数的默认值</span><br><span class="line">    &quot;defaultParams&quot;: true,</span><br><span class="line">    // 块级作用域，允许使用let const</span><br><span class="line">    &quot;blockBindings&quot;: true,</span><br><span class="line">    // 允许使用模块，模块内默认严格模式</span><br><span class="line">    &quot;modules&quot;: true,</span><br><span class="line">    // 允许字面量定义对象时，用表达式做属性名</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/object#属性名表达式</span><br><span class="line">    &quot;objectLiteralComputedProperties&quot;: true,</span><br><span class="line">    // 允许对象字面量方法名简写</span><br><span class="line">    /*var o = &#123;</span><br><span class="line">        method() &#123;</span><br><span class="line">          return &quot;Hello!&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;;</span><br><span class="line"></span><br><span class="line">     等同于</span><br><span class="line"></span><br><span class="line">     var o = &#123;</span><br><span class="line">       method: function() &#123;</span><br><span class="line">         return &quot;Hello!&quot;;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;;</span><br><span class="line">    */</span><br><span class="line">    &quot;objectLiteralShorthandMethods&quot;: true,</span><br><span class="line">    /*</span><br><span class="line">      对象字面量属性名简写</span><br><span class="line">      var foo = &apos;bar&apos;;</span><br><span class="line">      var baz = &#123;foo&#125;;</span><br><span class="line">      baz // &#123;foo: &quot;bar&quot;&#125;</span><br><span class="line"></span><br><span class="line">      // 等同于</span><br><span class="line">      var baz = &#123;foo: foo&#125;;</span><br><span class="line">    */</span><br><span class="line">    &quot;objectLiteralShorthandProperties&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#rest参数</span><br><span class="line">    &quot;restParams&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/function#扩展运算符</span><br><span class="line">    &quot;spread&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/iterator#for---of循环</span><br><span class="line">    &quot;forOf&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/generator</span><br><span class="line">    &quot;generators&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/string#模板字符串</span><br><span class="line">    &quot;templateStrings&quot;: true,</span><br><span class="line">    &quot;superInFunctions&quot;: true,</span><br><span class="line">    // http://es6.ruanyifeng.com/#docs/object#对象的扩展运算符</span><br><span class="line">    &quot;experimentalObjectRestSpread&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 详细参见 http://eslint.org/docs/rules/</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    // 定义对象的set存取器属性时，强制定义get</span><br><span class="line">    &quot;accessor-pairs&quot;: 2,</span><br><span class="line">    // 指定数组的元素之间要以空格隔开(,后面)， never参数：[ 之前和 ] 之后不能带空格，always参数：[ 之前和 ] 之后必须带空格</span><br><span class="line">    &quot;array-bracket-spacing&quot;: [2, &quot;never&quot;],</span><br><span class="line">    // 在块级作用域外访问块内定义的变量是否报错提示</span><br><span class="line">    &quot;block-scoped-var&quot;: 0,</span><br><span class="line">    // if while function 后面的&#123;必须与if在同一行，java风格。</span><br><span class="line">    &quot;brace-style&quot;: [2, &quot;1tbs&quot;, &#123; &quot;allowSingleLine&quot;: true &#125;],</span><br><span class="line">    // 双峰驼命名格式</span><br><span class="line">    &quot;camelcase&quot;: 2,</span><br><span class="line">    // 数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号，</span><br><span class="line">    // always-multiline：多行模式必须带逗号，单行模式不能带逗号</span><br><span class="line">    &quot;comma-dangle&quot;: [2, &quot;never&quot;],</span><br><span class="line">    // 控制逗号前后的空格</span><br><span class="line">    &quot;comma-spacing&quot;: [2, &#123; &quot;before&quot;: false, &quot;after&quot;: true &#125;],</span><br><span class="line">    // 控制逗号在行尾出现还是在行首出现</span><br><span class="line">    // http://eslint.org/docs/rules/comma-style</span><br><span class="line">    &quot;comma-style&quot;: [2, &quot;last&quot;],</span><br><span class="line">    // 圈复杂度</span><br><span class="line">    &quot;complexity&quot;: [2,9],</span><br><span class="line">    // 以方括号取对象属性时，[ 后面和 ] 前面是否需要空格, 可选参数 never, always</span><br><span class="line">    &quot;computed-property-spacing&quot;: [2,&quot;never&quot;],</span><br><span class="line">    // 强制方法必须返回值，TypeScript强类型，不配置</span><br><span class="line">    &quot;consistent-return&quot;: 0,</span><br><span class="line">    // 用于指统一在回调函数中指向this的变量名，箭头函数中的this已经可以指向外层调用者，应该没卵用了</span><br><span class="line">    // e.g [0,&quot;that&quot;] 指定只能 var that = this. that不能指向其他任何值，this也不能赋值给that以外的其他值</span><br><span class="line">    &quot;consistent-this&quot;: 0,</span><br><span class="line">    // 强制在子类构造函数中用super()调用父类构造函数，TypeScrip的编译器也会提示</span><br><span class="line">    &quot;constructor-super&quot;: 0,</span><br><span class="line">    // if else while for do后面的代码块是否需要&#123; &#125;包围，参数：</span><br><span class="line">    //    multi  只有块中有多行语句时才需要&#123; &#125;包围</span><br><span class="line">    //    multi-line  只有块中有多行语句时才需要&#123; &#125;包围, 但是块中的执行语句只有一行时，</span><br><span class="line">    //                   块中的语句只能跟和if语句在同一行。if (foo) foo++; else doSomething();</span><br><span class="line">    //    multi-or-nest 只有块中有多行语句时才需要&#123; &#125;包围, 如果块中的执行语句只有一行，执行语句可以零另起一行也可以跟在if语句后面</span><br><span class="line">    //    [2, &quot;multi&quot;, &quot;consistent&quot;] 保持前后语句的&#123; &#125;一致</span><br><span class="line">    //    default: [2, &quot;all&quot;] 全都需要&#123; &#125;包围</span><br><span class="line">    &quot;curly&quot;: [2, &quot;all&quot;],</span><br><span class="line">    // switch语句强制default分支，也可添加 // no default 注释取消此次警告</span><br><span class="line">    &quot;default-case&quot;: 2,</span><br><span class="line">    // 强制object.key 中 . 的位置，参数:</span><br><span class="line">    //      property，&apos;.&apos;号应与属性在同一行</span><br><span class="line">    //      object, &apos;.&apos; 号应与对象名在同一行</span><br><span class="line">    &quot;dot-location&quot;: [2, &quot;property&quot;],</span><br><span class="line">    // 强制使用.号取属性</span><br><span class="line">    //    参数： allowKeywords：true 使用保留字做属性名时，只能使用.方式取属性</span><br><span class="line">    //                          false 使用保留字做属性名时, 只能使用[]方式取属性 e.g [2, &#123;&quot;allowKeywords&quot;: false&#125;]</span><br><span class="line">    //           allowPattern:  当属性名匹配提供的正则表达式时，允许使用[]方式取值,否则只能用.号取值 e.g [2, &#123;&quot;allowPattern&quot;: &quot;^[a-z]+(_[a-z]+)+$&quot;&#125;]</span><br><span class="line">    &quot;dot-notation&quot;: [2, &#123;&quot;allowKeywords&quot;: true&#125;],</span><br><span class="line">    // 文件末尾强制换行</span><br><span class="line">    &quot;eol-last&quot;: 2,</span><br><span class="line">    // 使用 === 替代 ==</span><br><span class="line">    &quot;eqeqeq&quot;: [2, &quot;allow-null&quot;],</span><br><span class="line">    // 方法表达式是否需要命名</span><br><span class="line">    &quot;func-names&quot;: 0,</span><br><span class="line">    // 方法定义风格，参数：</span><br><span class="line">    //    declaration: 强制使用方法声明的方式，function f()&#123;&#125; e.g [2, &quot;declaration&quot;]</span><br><span class="line">    //    expression：强制使用方法表达式的方式，var f = function() &#123;&#125;  e.g [2, &quot;expression&quot;]</span><br><span class="line">    //    allowArrowFunctions: declaration风格中允许箭头函数。 e.g [2, &quot;declaration&quot;, &#123; &quot;allowArrowFunctions&quot;: true &#125;]</span><br><span class="line">    &quot;func-style&quot;: 0,</span><br><span class="line">    &quot;generator-star-spacing&quot;: [2, &#123; &quot;before&quot;: true, &quot;after&quot;: true &#125;],</span><br><span class="line">    &quot;guard-for-in&quot;: 0,</span><br><span class="line">    &quot;handle-callback-err&quot;: [2, &quot;^(err|error)$&quot; ],</span><br><span class="line">    &quot;indent&quot;: [2, 2, &#123; &quot;SwitchCase&quot;: 1 &#125;],</span><br><span class="line">    &quot;key-spacing&quot;: [2, &#123; &quot;beforeColon&quot;: false, &quot;afterColon&quot;: true &#125;],</span><br><span class="line">    &quot;linebreak-style&quot;: 0,</span><br><span class="line">    &quot;lines-around-comment&quot;: 0,</span><br><span class="line">    &quot;max-nested-callbacks&quot;: 0,</span><br><span class="line">    &quot;new-cap&quot;: [2, &#123; &quot;newIsCap&quot;: true, &quot;capIsNew&quot;: false &#125;],</span><br><span class="line">    &quot;new-parens&quot;: 2,</span><br><span class="line">    &quot;newline-after-var&quot;: 0,</span><br><span class="line">    &quot;no-alert&quot;: 0,</span><br><span class="line">    &quot;no-array-constructor&quot;: 2,</span><br><span class="line">    &quot;no-caller&quot;: 2,</span><br><span class="line">    &quot;no-catch-shadow&quot;: 0,</span><br><span class="line">    &quot;no-cond-assign&quot;: 2,</span><br><span class="line">    &quot;no-console&quot;: 0,</span><br><span class="line">    &quot;no-constant-condition&quot;: 0,</span><br><span class="line">    &quot;no-continue&quot;: 0,</span><br><span class="line">    &quot;no-control-regex&quot;: 2,</span><br><span class="line">    &quot;no-debugger&quot;: 2,</span><br><span class="line">    &quot;no-delete-var&quot;: 2,</span><br><span class="line">    &quot;no-div-regex&quot;: 0,</span><br><span class="line">    &quot;no-dupe-args&quot;: 2,</span><br><span class="line">    &quot;no-dupe-keys&quot;: 2,</span><br><span class="line">    &quot;no-duplicate-case&quot;: 2,</span><br><span class="line">    &quot;no-else-return&quot;: 0,</span><br><span class="line">    &quot;no-empty&quot;: 0,</span><br><span class="line">    &quot;no-empty-character-class&quot;: 2,</span><br><span class="line">    &quot;no-empty-label&quot;: 2,</span><br><span class="line">    &quot;no-eq-null&quot;: 0,</span><br><span class="line">    &quot;no-eval&quot;: 2,</span><br><span class="line">    &quot;no-ex-assign&quot;: 2,</span><br><span class="line">    &quot;no-extend-native&quot;: 2,</span><br><span class="line">    &quot;no-extra-bind&quot;: 2,</span><br><span class="line">    &quot;no-extra-boolean-cast&quot;: 2,</span><br><span class="line">    &quot;no-extra-parens&quot;: 0,</span><br><span class="line">    &quot;no-extra-semi&quot;: 0,</span><br><span class="line">    &quot;no-fallthrough&quot;: 2,</span><br><span class="line">    &quot;no-floating-decimal&quot;: 2,</span><br><span class="line">    &quot;no-func-assign&quot;: 2,</span><br><span class="line">    &quot;no-implied-eval&quot;: 2,</span><br><span class="line">    &quot;no-inline-comments&quot;: 0,</span><br><span class="line">    &quot;no-inner-declarations&quot;: [2, &quot;functions&quot;],</span><br><span class="line">    &quot;no-invalid-regexp&quot;: 2,</span><br><span class="line">    &quot;no-irregular-whitespace&quot;: 2,</span><br><span class="line">    &quot;no-iterator&quot;: 2,</span><br><span class="line">    &quot;no-label-var&quot;: 2,</span><br><span class="line">    &quot;no-labels&quot;: 2,</span><br><span class="line">    &quot;no-lone-blocks&quot;: 2,</span><br><span class="line">    &quot;no-lonely-if&quot;: 0,</span><br><span class="line">    &quot;no-loop-func&quot;: 0,</span><br><span class="line">    &quot;no-mixed-requires&quot;: 0,</span><br><span class="line">    &quot;no-mixed-spaces-and-tabs&quot;: 2,</span><br><span class="line">    &quot;no-multi-spaces&quot;: 2,</span><br><span class="line">    &quot;no-multi-str&quot;: 2,</span><br><span class="line">    &quot;no-multiple-empty-lines&quot;: [2, &#123; &quot;max&quot;: 1 &#125;],</span><br><span class="line">    &quot;no-native-reassign&quot;: 2,</span><br><span class="line">    &quot;no-negated-in-lhs&quot;: 2,</span><br><span class="line">    &quot;no-nested-ternary&quot;: 0,</span><br><span class="line">    &quot;no-new&quot;: 2,</span><br><span class="line">    &quot;no-new-func&quot;: 0,</span><br><span class="line">    &quot;no-new-object&quot;: 2,</span><br><span class="line">    &quot;no-new-require&quot;: 2,</span><br><span class="line">    &quot;no-new-wrappers&quot;: 2,</span><br><span class="line">    &quot;no-obj-calls&quot;: 2,</span><br><span class="line">    &quot;no-octal&quot;: 2,</span><br><span class="line">    &quot;no-octal-escape&quot;: 2,</span><br><span class="line">    &quot;no-param-reassign&quot;: 0,</span><br><span class="line">    &quot;no-path-concat&quot;: 0,</span><br><span class="line">    &quot;no-process-env&quot;: 0,</span><br><span class="line">    &quot;no-process-exit&quot;: 0,</span><br><span class="line">    &quot;no-proto&quot;: 0,</span><br><span class="line">    &quot;no-redeclare&quot;: 2,</span><br><span class="line">    &quot;no-regex-spaces&quot;: 2,</span><br><span class="line">    &quot;no-restricted-modules&quot;: 0,</span><br><span class="line">    &quot;no-return-assign&quot;: 2,</span><br><span class="line">    &quot;no-script-url&quot;: 0,</span><br><span class="line">    &quot;no-self-compare&quot;: 2,</span><br><span class="line">    &quot;no-sequences&quot;: 2,</span><br><span class="line">    &quot;no-shadow&quot;: 0,</span><br><span class="line">    &quot;no-shadow-restricted-names&quot;: 2,</span><br><span class="line">    &quot;no-spaced-func&quot;: 2,</span><br><span class="line">    &quot;no-sparse-arrays&quot;: 2,</span><br><span class="line">    &quot;no-sync&quot;: 0,</span><br><span class="line">    &quot;no-ternary&quot;: 0,</span><br><span class="line">    &quot;no-this-before-super&quot;: 2,</span><br><span class="line">    &quot;no-throw-literal&quot;: 2,</span><br><span class="line">    &quot;no-trailing-spaces&quot;: 2,</span><br><span class="line">    &quot;no-undef&quot;: 2,</span><br><span class="line">    &quot;no-undef-init&quot;: 2,</span><br><span class="line">    &quot;no-undefined&quot;: 0,</span><br><span class="line">    &quot;no-underscore-dangle&quot;: 0,</span><br><span class="line">    &quot;no-unexpected-multiline&quot;: 2,</span><br><span class="line">    &quot;no-unneeded-ternary&quot;: 2,</span><br><span class="line">    &quot;no-unreachable&quot;: 2,</span><br><span class="line">    &quot;no-unused-expressions&quot;: 0,</span><br><span class="line">    &quot;no-unused-vars&quot;: [2, &#123; &quot;vars&quot;: &quot;all&quot;, &quot;args&quot;: &quot;none&quot; &#125;],</span><br><span class="line">    &quot;no-use-before-define&quot;: 0,</span><br><span class="line">    &quot;no-var&quot;: 0,</span><br><span class="line">    &quot;no-void&quot;: 0,</span><br><span class="line">    &quot;no-warning-comments&quot;: 0,</span><br><span class="line">    &quot;no-with&quot;: 2,</span><br><span class="line">    &quot;object-curly-spacing&quot;: 0,</span><br><span class="line">    &quot;object-shorthand&quot;: 0,</span><br><span class="line">    &quot;one-var&quot;: [2, &#123; &quot;initialized&quot;: &quot;never&quot; &#125;],</span><br><span class="line">    &quot;operator-assignment&quot;: 0,</span><br><span class="line">    &quot;operator-linebreak&quot;: [2, &quot;after&quot;, &#123; &quot;overrides&quot;: &#123; &quot;?&quot;: &quot;before&quot;, &quot;:&quot;: &quot;before&quot; &#125; &#125;],</span><br><span class="line">    &quot;padded-blocks&quot;: 0,</span><br><span class="line">    &quot;prefer-const&quot;: 0,</span><br><span class="line">    &quot;quote-props&quot;: 0,</span><br><span class="line">    &quot;quotes&quot;: [2, &quot;single&quot;, &quot;avoid-escape&quot;],</span><br><span class="line">    &quot;radix&quot;: 2,</span><br><span class="line">    &quot;semi&quot;: [2, &quot;never&quot;],</span><br><span class="line">    &quot;semi-spacing&quot;: 0,</span><br><span class="line">    &quot;sort-vars&quot;: 0,</span><br><span class="line">    &quot;space-after-keywords&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-before-blocks&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-before-function-paren&quot;: [2, &quot;always&quot;],</span><br><span class="line">    &quot;space-in-parens&quot;: [2, &quot;never&quot;],</span><br><span class="line">    &quot;space-infix-ops&quot;: 2,</span><br><span class="line">    &quot;space-return-throw-case&quot;: 2,</span><br><span class="line">    &quot;space-unary-ops&quot;: [2, &#123; &quot;words&quot;: true, &quot;nonwords&quot;: false &#125;],</span><br><span class="line">    &quot;spaced-comment&quot;: [2, &quot;always&quot;, &#123; &quot;markers&quot;: [&quot;global&quot;, &quot;globals&quot;, &quot;eslint&quot;, &quot;eslint-disable&quot;, &quot;*package&quot;, &quot;!&quot;] &#125;],</span><br><span class="line">    &quot;strict&quot;: 0,</span><br><span class="line">    &quot;use-isnan&quot;: 2,</span><br><span class="line">    &quot;valid-jsdoc&quot;: 0,</span><br><span class="line">    &quot;valid-typeof&quot;: 2,</span><br><span class="line">    &quot;vars-on-top&quot;: 0,</span><br><span class="line">    &quot;wrap-iife&quot;: [2, &quot;any&quot;],</span><br><span class="line">    &quot;wrap-regex&quot;: 0,</span><br><span class="line">    &quot;yoda&quot;: [2, &quot;never&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/深入浅出js中的this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1737,6 +1673,169 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/移动端调试方案weinre/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiang Dianen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江典恩博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/移动端调试方案weinre/" itemprop="url">Weinre 使用入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
+                2018-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具使用/" itemprop="url" rel="index">
+                    <span itemprop="name">工具使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Weinre-使用入门"><a href="#Weinre-使用入门" class="headerlink" title="Weinre 使用入门"></a>Weinre 使用入门</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>Weinre(Web Inspector Remote)是一款基于Web Inspector(Webkit)的远程调试工具， 它使用JS编写， 可以让我们在电脑上直接调试运行在手机上的远程页面。 与传统的Web Inspector的使用场景不同， Weinre的使用场景如下图， 调试的页面在手机上， 调试工具在PC的chrome， 二者通过网络连接通信。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -g install weinre</span><br></pre></td></tr></table></figure>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>命令行中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weinre</span><br></pre></td></tr></table></figure>
+<p>若运行成功，输出如下：</p>
+<p><img src="https://camo.githubusercontent.com/b08079949243875601a2ceacd7a6ff53c3a7138c/687474703a2f2f68616974616f2e6e6f732e6e6574656173652e636f6d2f30356136653635666139353334623963386636356131663531656439383963612e6a7067" alt="image"></p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>Weinre还提供了下面的启动参数:</p>
+<ol>
+<li>help : 显示Weinre的Help </li>
+<li>httpPort   [portNumber] : 设置Weinre使用的端口号， 默认是8080</li>
+<li>boundHost  [hostname | ip address | -all-] : 默认是’localhost’， 这个参数是为了限制可以访问Weinre Server的设备， 设置为-all-或者指定ip， 那么任何设备都可以访问Weinre Server。</li>
+<li>verbose   [true | false] : 如果想看到更多的关于Weinre运行情况的输出， 那么可以设置这个选项为true， 默认为false；</li>
+<li>debug   [true | false] : 这个选项与–verbose类似， 会输出更多的信息。默认为false。</li>
+<li>readTimeout   [seconds] : Server发送信息到Target/Client的超时时间， 默认为5s。</li>
+<li>deathTimeout   [seconds] : 默认为3倍的readTimeout， 如果页面超过这个时间都没有任何响应， 那么就会断开连接。</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在页面中，有两部分是我们要使用的，第一部分是Access Points，如下图：</p>
+<p><img src="https://camo.githubusercontent.com/05a033afa28fe82757d996d22d3d20821feb1cd2/687474703a2f2f68616974616f2e6e6f732e6e6574656173652e636f6d2f31326333643831613733333934663065623731613631643037613632626231622e6a7067" alt="image"></p>
+<p>第二个部分是Target Script，如下图，这个地址是系统根据我们启动Weinre服务时的参数设置生成的target-script.js文件的链接地址。我们需要将这个js文件嵌入到待测试的页面中。要注意的是不要使用localhost:8080打开Weinre服务，否则生成的TargetScript链接也以localhost开头，这样直接复制到手机，就无法获取到文件了。</p>
+<p><img src="https://camo.githubusercontent.com/6aefd3336c34fa1944a9df0594f710e711748f8c/687474703a2f2f68616974616f2e6e6f732e6e6574656173652e636f6d2f37616362303665373336396334313962393530623936323466653464666262652e6a7067" alt="image"></p>
+<p>打开后的DebugClient如下图:</p>
+<p><img src="https://camo.githubusercontent.com/59e75aaaf65edc200181124eecca6ef219faef6e/687474703a2f2f68616974616f2e6e6f732e6e6574656173652e636f6d2f37656563663434343564633134656465396666313238353032386365646432382e6a7067" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1791,7 +1890,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1813,7 +1912,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
