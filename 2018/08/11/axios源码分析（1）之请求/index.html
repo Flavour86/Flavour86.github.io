@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,axios," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Axios 源码分析（1）之请求首先在开始之前，我当做你对Promise已经很熟悉啦，如果不熟悉的，请自行再去了解一下Promise 首先，axios是什么东西呢？这里简单的介绍一下，Axios 是一个基于 promise 的 HTTP 库，可以运行在浏览器和 node.js 中 我们先来看看axios的使用api吧123456789import axios from &amp;apos;axios&amp;ap">
+<meta name="keywords" content="js,axios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Axios 源码分析（1）之请求">
+<meta property="og:url" content="http://yoursite.com/2018/08/11/axios源码分析（1）之请求/index.html">
+<meta property="og:site_name" content="Flavour&#39;s Technical Blog">
+<meta property="og:description" content="Axios 源码分析（1）之请求首先在开始之前，我当做你对Promise已经很熟悉啦，如果不熟悉的，请自行再去了解一下Promise 首先，axios是什么东西呢？这里简单的介绍一下，Axios 是一个基于 promise 的 HTTP 库，可以运行在浏览器和 node.js 中 我们先来看看axios的使用api吧123456789import axios from &amp;apos;axios&amp;ap">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-11T10:58:31.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Axios 源码分析（1）之请求">
+<meta name="twitter:description" content="Axios 源码分析（1）之请求首先在开始之前，我当做你对Promise已经很熟悉啦，如果不熟悉的，请自行再去了解一下Promise 首先，axios是什么东西呢？这里简单的介绍一下，Axios 是一个基于 promise 的 HTTP 库，可以运行在浏览器和 node.js 中 我们先来看看axios的使用api吧123456789import axios from &amp;apos;axios&amp;ap">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/11/axios源码分析（1）之请求/"/>
+
+
+
+
+
+  <title>Axios 源码分析（1）之请求 | Flavour's Technical Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Flavour's Technical Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">A Blog About Front-end Technology</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/axios源码分析（1）之请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Flavour Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flavour's Technical Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Axios 源码分析（1）之请求</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T00:00:00+08:00">
+                2018-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/源码分析/" itemprop="url" rel="index">
+                    <span itemprop="name">源码分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Axios-源码分析（1）之请求"><a href="#Axios-源码分析（1）之请求" class="headerlink" title="Axios 源码分析（1）之请求"></a>Axios 源码分析（1）之请求</h1><p>首先在开始之前，我当做你对Promise已经很熟悉啦，如果不熟悉的，请自行再去了解一下Promise</p>
+<p>首先，axios是什么东西呢？<br>这里简单的介绍一下，Axios 是一个基于 promise 的 HTTP 库，可以运行在浏览器和 node.js 中</p>
+<p>我们先来看看axios的使用api吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line"></span><br><span class="line">axios.get(&apos;/user?ID=12345&apos;)</span><br><span class="line">  .then(function (response) &#123;</span><br><span class="line">    console.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(function (error) &#123;</span><br><span class="line">    console.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这是axios的最基础的使用方法，这里直接用axios进行一个get请求，然后返回一个Promise</p>
+<p>于是乎，我们打开源码找到<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">module.exports.default = axios</span><br></pre></td></tr></table></figure></p>
+<p>接着看见<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var axios = createInstance(defaults);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function createInstance(defaultConfig) &#123;</span><br><span class="line">  var context = new Axios(defaultConfig);</span><br><span class="line">  var instance = bind(Axios.prototype.request, context);</span><br><span class="line"></span><br><span class="line">  // Copy axios.prototype to instance</span><br><span class="line">  utils.extend(instance, Axios.prototype, context);</span><br><span class="line"></span><br><span class="line">  // Copy context to instance</span><br><span class="line">  utils.extend(instance, context);</span><br><span class="line"></span><br><span class="line">  return instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从这里我们看见，context是一个对象，是Axios这类的实例，而instance是Axios的原型上的那个request的方法，只不过，通过bind，将它的this指向了context，<br>虽然大概猜到bind的用途，但是我们还是得看看他的具体实现,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function bind(fn, thisArg)&#123;</span><br><span class="line">  return function wrap()&#123;</span><br><span class="line">    var args = new Array(arguments.length);</span><br><span class="line">      for(var i = 0; i &lt; args.length; i++)&#123;</span><br><span class="line">          args[i] = arguments[i]</span><br><span class="line">      &#125;</span><br><span class="line">      return fn.apply(thisArg, args)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以axios其实就是instance,是一个方法，但是axios为什么还有<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们接着往下看</span><br></pre></td></tr></table></figure></p>
+<p>// Copy axios.prototype to instance<br>utils.extend(instance, Axios.prototype, context);<br>// Copy context to instance<br>utils.extend(instance, context);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里写的很清楚，将```axios.prototype, context```这2个对象copy给instance，我们要看看extend的具体实现</span><br></pre></td></tr></table></figure></p>
+<p>function extend(a, b, thisArg) {<br>  forEach(b, function assignValue(val, key) {<br>    if (thisArg &amp;&amp; typeof val === ‘function’) {<br>      a[key] = bind(val, thisArg);<br>    } else {<br>      a[key] = val;<br>    }<br>  });<br>  return a;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这里对b对象进行遍历，然后如果属性值是```function```的话，就将这个```function```的this对象指向到```thisArg```,然后赋给a，如果不是```function```直接赋给a，最后返回a，所以`axios.get`就是`Axios.prototype`中继承过来的，让我们来看看`Axios.prototype`,于是乎，我们找到</span><br><span class="line">`axios/lib/core/Axios.js`，打开它,我本来是想找`Axios.prototype.get`,搜了下，没搜到，尴尬了，然后看见下面这段</span><br></pre></td></tr></table></figure></p>
+<p>utils.forEach([‘delete’, ‘get’, ‘head’, ‘option’], function(method){<br>    Axios.proptotype[method] = function(url, config){<br>        // 先不去看util.merge了，我猜也就是把config 和 后面的对象进行下合并<br>        return this.request(util.merge(config||{}, {<br>            method: method,<br>            url: url<br>        }))<br>    }<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里看出`Axios.prototype.get`其实就是去执行了`Axios.prototype.request`,找之</span><br></pre></td></tr></table></figure>
+<p>Axios.prototype.request = function request(config) {<br>  // Allow for axios(‘example/url’[, config]) a la fetch API<br>  if (typeof config === ‘string’) {<br>    config = arguments[1] || {};<br>    config.url = arguments[0];<br>  } else {<br>    config = config || {};<br>  }</p>
+<p>  config = mergeConfig(this.defaults, config);<br>  config.method = config.method ? config.method.toLowerCase() : ‘get’;<br>  // 前面就是对config于默认的config进行合并，并且对method进行toLowerCase处理</p>
+<p>  // Hook up interceptors middleware<br>  var chain = [dispatchRequest, undefined];<br>  var promise = Promise.resolve(config);<br>  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {<br>    chain.unshift(interceptor.fulfilled, interceptor.rejected);<br>  });</p>
+<p>  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {<br>    chain.push(interceptor.fulfilled, interceptor.rejected);<br>  });</p>
+<p>  while (chain.length) {<br>    promise = promise.then(chain.shift(), chain.shift());<br>  }<br>  // 这一段是拦截器的一些逻辑，我们暂时先忽略</p>
+<p>  return promise;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们可以看见，`request`函数返回的是promise，所以到这里就和`axios.get().then().catch()`对上了，但是这里如何发请求出去呢？这里混合一些拦截器的逻辑，我们暂先跳过，明眼的一看就知道是这个`dispatchRequest`,我们它的具体逻辑,找到`axios/lib/core/dispatchRequest.js`</span><br></pre></td></tr></table></figure></p>
+<p>function dispatchRequest(config){<br>    // …<br>    // 开始就对config的 baseUrl, data, headers进行处理<br>    var adapter = config.adapter || defaults.adapter;<br>    // 这个adapter是什么？一路以来并没有关注啊？<br>    // 执行adapter是一个Promise对象，resolve的函数的参数还是response<br>    // adpater肯定是去发送请求了啊<br>    return adapter(config).then(function(response){<br>        // …<br>        return response<br>    }, function(reason){<br>        // …<br>        return Promise.reject(reason)<br>    })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`dispatchRequest`这个代码有点长，我挑重点的贴出来，这里就是去执行`adapter`这个方法，然后成功之后返回response, 失败的话返回`Promise.reject(reason)`, 我再看一下adapter</span><br></pre></td></tr></table></figure></p>
+<p>var defaults.adapter = getDefaultAdapter();<br>function getDefaultAdapter(){<br>    var adapter;<br>    if(typeof XMLHttpRequest !== ‘undefined’){<br>        // 浏览器环境<br>        adapter = require(‘./adapter/xhr’);<br>    }else if(typeof process !== ‘undefined’){<br>        // node环境<br>        adapter = require(‘./adapter/http’);<br>    }<br>    return adapter;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以看出adapter就是根据浏览器环境跟node环境进行区分，浏览器环境就require浏览器的xhr对象，node环境就是使用node的http或者https的模块</span><br></pre></td></tr></table></figure></p>
+<p>// xhrAdapter<br> var request = new XMLHttpRequest();</p>
+<p>// httpAdapter<br>var http = require(‘http’);<br>var https = require(‘https’);<br>transport = isHttpsProxy ? https : http;<br><code>`</code><br>好了在一堆的忽略下，把请求的这块流程分析清晰，我们请求这部分的代码分析到这里，哈哈！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/axios/" rel="tag"># axios</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/11/axios源码分析（3）之请求取消/" rel="next" title="axios源码分析（3）之请求取消">
+                <i class="fa fa-chevron-left"></i> axios源码分析（3）之请求取消
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Flavour Jiang" />
+            
+              <p class="site-author-name" itemprop="name">Flavour Jiang</p>
+              <p class="site-description motion-element" itemprop="description">一个属于自己的空间</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Flavour86" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/1107925187/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="your-zhihu-url" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Axios-源码分析（1）之请求"><span class="nav-number">1.</span> <span class="nav-text">Axios 源码分析（1）之请求</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Flavour Jiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

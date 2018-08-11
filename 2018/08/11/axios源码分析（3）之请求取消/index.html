@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="XSS,CSRF," />
+  <meta name="keywords" content="js,axios," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="网页前端常见的攻击方式和预防攻击的方法常见攻击XSS (Cross Site Script) ，跨站脚本攻击。它指的是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入的恶意html代码会被执行，从而达到恶意用户的特殊目的。XSS属于被动式的攻击，因为其被动且不好利用，所以许多人常呼略其危害性。但是随着前端技术的不断进步富客户端的应用越来越多，这方面的问题越来越受关注。举个简单">
-<meta name="keywords" content="XSS,CSRF">
+<meta name="description" content="axios源码分析（3）之请求取消之前分析了2篇文章： axios分析之请求 \axios分析之拦截器 接下来，我们今天分析axios的取消这块的实现，老规矩，先来段使用api助兴一下123456789101112131415var CancelToken = axios.CancelToken;var source = CancelToken.source();axios.get(&amp;apos;/">
+<meta name="keywords" content="js,axios">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页前端常见的攻击方式和预防攻击的方法">
-<meta property="og:url" content="http://yoursite.com/2018/08/10/网页前端常见的攻击方式和预防攻击的方法/index.html">
+<meta property="og:title" content="axios源码分析（3）之请求取消">
+<meta property="og:url" content="http://yoursite.com/2018/08/11/axios源码分析（3）之请求取消/index.html">
 <meta property="og:site_name" content="Flavour&#39;s Technical Blog">
-<meta property="og:description" content="网页前端常见的攻击方式和预防攻击的方法常见攻击XSS (Cross Site Script) ，跨站脚本攻击。它指的是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入的恶意html代码会被执行，从而达到恶意用户的特殊目的。XSS属于被动式的攻击，因为其被动且不好利用，所以许多人常呼略其危害性。但是随着前端技术的不断进步富客户端的应用越来越多，这方面的问题越来越受关注。举个简单">
+<meta property="og:description" content="axios源码分析（3）之请求取消之前分析了2篇文章： axios分析之请求 \axios分析之拦截器 接下来，我们今天分析axios的取消这块的实现，老规矩，先来段使用api助兴一下123456789101112131415var CancelToken = axios.CancelToken;var source = CancelToken.source();axios.get(&amp;apos;/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-11T03:27:49.047Z">
+<meta property="og:updated_time" content="2018-08-11T10:57:54.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网页前端常见的攻击方式和预防攻击的方法">
-<meta name="twitter:description" content="网页前端常见的攻击方式和预防攻击的方法常见攻击XSS (Cross Site Script) ，跨站脚本攻击。它指的是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入的恶意html代码会被执行，从而达到恶意用户的特殊目的。XSS属于被动式的攻击，因为其被动且不好利用，所以许多人常呼略其危害性。但是随着前端技术的不断进步富客户端的应用越来越多，这方面的问题越来越受关注。举个简单">
+<meta name="twitter:title" content="axios源码分析（3）之请求取消">
+<meta name="twitter:description" content="axios源码分析（3）之请求取消之前分析了2篇文章： axios分析之请求 \axios分析之拦截器 接下来，我们今天分析axios的取消这块的实现，老规矩，先来段使用api助兴一下123456789101112131415var CancelToken = axios.CancelToken;var source = CancelToken.source();axios.get(&amp;apos;/">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/10/网页前端常见的攻击方式和预防攻击的方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/11/axios源码分析（3）之请求取消/"/>
 
 
 
 
 
-  <title>网页前端常见的攻击方式和预防攻击的方法 | Flavour's Technical Blog</title>
+  <title>axios源码分析（3）之请求取消 | Flavour's Technical Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/网页前端常见的攻击方式和预防攻击的方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/axios源码分析（3）之请求取消/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Flavour Jiang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网页前端常见的攻击方式和预防攻击的方法</h1>
+          <h1 class="post-title" itemprop="name headline">axios源码分析（3）之请求取消</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T14:44:04+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T00:00:00+08:00">
                 2018-08
               </time>
             
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全性/" itemprop="url" rel="index">
-                    <span itemprop="name">安全性</span>
+                  <a href="/categories/源码分析/" itemprop="url" rel="index">
+                    <span itemprop="name">源码分析</span>
                   </a>
                 </span>
 
@@ -342,8 +342,15 @@
       
 
       
-        <h1 id="网页前端常见的攻击方式和预防攻击的方法"><a href="#网页前端常见的攻击方式和预防攻击的方法" class="headerlink" title="网页前端常见的攻击方式和预防攻击的方法"></a>网页前端常见的攻击方式和预防攻击的方法</h1><h3 id="常见攻击"><a href="#常见攻击" class="headerlink" title="常见攻击"></a>常见攻击</h3><p>XSS (Cross Site Script) ，跨站脚本攻击。它指的是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入的恶意html代码会被执行，从而达到恶意用户的特殊目的。XSS属于被动式的攻击，因为其被动且不好利用，所以许多人常呼略其危害性。但是随着前端技术的不断进步富客户端的应用越来越多，这方面的问题越来越受关注。举个简单例子 ： 假如你现在是sns站点上一个用户，发布信息的功能存在漏洞可以执行js 你在 此刻输入一个 恶意脚本，那么当前所有看到你新信息的人的浏览器都会执行这个脚本弹出提示框 （很爽吧 弹出广告 ：）），如果你做一些更为激进行为呢 后果难以想象。<br>CSRF(Cross Site Request Forgery)，跨站点伪造请求。顾名思义就是 通过伪造连接请求在用户不知情的情况下，让用户以自己的身份来完成攻击者需要达到的一些目的。csrf 的攻击不同于xss csrf 需要被攻击者的主动行为触发。这样听来似乎是有“被钓鱼”的嫌疑哈哈。<br>多窗口浏览器这这方面似乎是有助纣为虐的嫌疑，因为打开的新窗口是具有当前所有会话的，如果是单浏览器窗口类似ie6 就不会存在这样的问题，因为每个窗口都是一个独立的进程。举个简单例子 ： 你正在玩白社会， 看到有人发了一个连接，你点击过去，然后这个连接里面伪造了一个送礼物的表单，这仅仅是一个简单的例子，问题可见一般。<br>cookie劫持，通过获取页面的权限，在页面中写一个简单的到恶意站点的请求，并携带用户的cookie 获取cookie后通过cookie 就可以直以被盗用户的身份登录站点。这就是cookie 劫持。举个简单例子： 某人写了一篇很有意思的日志，然后分享给大家，很多人都点击查看并且分享了该日志，一切似乎都很正常，然而写日志的人却另有用心，在日志中偷偷隐藏了一个对站外的请求,那么所有看过这片日志的人都会在不知情的情况下把自己的cookie 发送给了 某人，那么他可以通过任意一个人的cookie 来登录这个人的账户。</p>
-<h3 id="我们该怎么做？"><a href="#我们该怎么做？" class="headerlink" title="我们该怎么做？"></a>我们该怎么做？</h3><p>大致可以分为两类 1 一般用户 2网站开发人员。<br>首先我们来说说做为一个一般的web产品使用者，很多时候我们是被动的，是在不知情的情况下被利用的。那么我们可以：<br>1 对于安全级别较高的web应用访问 需要打开一个独立浏览器窗口。<br>2 对于陌生人发布的链接最好也是复制然后在新开的窗口中打开，当然最好的办法就是无视 – -。<br>对于开发人员来说我们得从相对详细的一些角度来分析：<br>对于xss 攻击 特点是攻击者的代码必须能获取用户浏览器端的执行权限，那么代码是从哪里来的呢，想要杜绝此类攻击出现 其实可以在入口 和出口 进行严格的过滤，这样的双保险应当说99% 的类似问题就被我们解决掉了，另外的1% 是那些蹩脚的浏览器带来的后遗症，相信在未来这种问题会越来越少的。<br>这里我对xss漏洞的形式作了一些整理<br>恶意代码值被作为某一标签的内容显示 （如果输入的是html 则html会被解析）例如你输入用户名 更新后用户名会显示到页面中的某一个标签内 如果你输入的是<br>popper.w<script src="hack.js" type="text/javajscript"></script><br>那么如果不做过滤直接显示到页面， 会引进一个第三方的js 代码并且会执行。<br>策略：在不需要html输入的地方对html 标签 及一些特殊字符( ” &lt; &gt; &amp; 等等 )做过滤，将其转化为不被浏览器解释执行的字符<br>恶意代码被作为某一标签的属性显示（通过用 “ 将属性截断来开辟新的属性 或恶意方法） 这种情况往往是是开发人员为了实现功能可能会在某些dom标签上记录一些用户输入的信息例如你输入的用户名 会在页面中的标签中以 title 的形式出现 这时候 如果 你输入的是精心设计的内容 那么 看看 这个<br><a title="popper.w" onclick="alert(1)">popper.w” onclick=”alert(1)</a><br>这里我实际上输入的内容是“popper.w” onclick=”alert(1)”，当然你可以在上边写更多的内容。<br>策略：对属性中可能存在截断的一些字符进行过滤 属性本身存在的 单引号和双引号都需要进行转码。<br>恶意代码被作为html代码本身显示 (常见的html编辑器) 这种情况存在的问题最多，不再这里举例子了。<br>策略：最好对用户输入的html 标签及标签属性做白名单过滤，也可以对一些存在漏洞的标签和属性进行专门过滤。<br>恶意代码被作为一段json字符串显示 （通过 变量截断 创造新的 恶意的js 变量 甚至是可执行的代码） 这个问题的关键是用户输入的信息可能会成为页面中js 代码的一部分。<br>策略：对属性中可能存在截断的一些字符进行过滤 属性本身存在的 单引号和双引号都需要进行转码。<br>对于crsf 和cookie 劫持<br>特点 隐蔽性比较高 有些时候是先利用xss 漏洞 然后再做 欺骗的<br>策略<br>通过 referer、token 或者 验证码 来检测用户提交。<br>尽量不要在页面的链接中暴漏任何与用户唯一号（用户id）有关的信息。<br>对于用户修改 删除 提交的操作最好都使用post 操作 。<br>避免全站通用的cookie 严格的设置cookie的域。</p>
+        <h1 id="axios源码分析（3）之请求取消"><a href="#axios源码分析（3）之请求取消" class="headerlink" title="axios源码分析（3）之请求取消"></a>axios源码分析（3）之请求取消</h1><p>之前分析了2篇文章：</p>
+<p><a href="&#39;./axios源码分析（1）之请求.md&#39;">axios分析之请求</a> \<br><a href="&#39;./axios源码分析（2）之拦截器.md&#39;">axios分析之拦截器</a></p>
+<p>接下来，我们今天分析axios的取消这块的实现，老规矩，先来段使用api助兴一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var CancelToken = axios.CancelToken;</span><br><span class="line">var source = CancelToken.source();</span><br><span class="line">axios.get(&apos;/get?name=xmz&apos;, &#123;</span><br><span class="line">    cancelToken : source.token</span><br><span class="line">&#125;).then((response)=&gt;&#123;</span><br><span class="line">    console.log(&apos;response&apos;, response)</span><br><span class="line">&#125;).catch((error)=&gt;&#123;</span><br><span class="line">    if(axios.isCancel(error))&#123;</span><br><span class="line">        console.log(&apos;取消请求传递的消息&apos;, error.message)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        console.log(&apos;error&apos;, error)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 取消请求</span><br><span class="line">source.cancel(&apos;取消请求传递这条消息&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>根据这个例子，我又找到了<code>axios/lib/axios.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.CancelToken = require(&apos;./cancel/CancelToken&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>找到<code>axios/lib/cancel/CancelToken.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CancelToken.source = function source() &#123;</span><br><span class="line">  var cancel;</span><br><span class="line">  var token = new CancelToken(function executor(c) &#123;</span><br><span class="line">    cancel = c;</span><br><span class="line">  &#125;);</span><br><span class="line">  return &#123;</span><br><span class="line">    token: token,</span><br><span class="line">    cancel: cancel</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这里看出source执行完之后，返回一个还有token跟cancel的对象，token，也是一个对象，这个cancel到底是什么还不得而知，继续看下CancelToken这个类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function CancelToken(executor) &#123;</span><br><span class="line">  if (typeof executor !== &apos;function&apos;) &#123;</span><br><span class="line">    throw new TypeError(&apos;executor must be a function.&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var resolvePromise;</span><br><span class="line">  this.promise = new Promise(function promiseExecutor(resolve) &#123;</span><br><span class="line">    resolvePromise = resolve;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  var token = this;</span><br><span class="line">  executor(function cancel(message) &#123;</span><br><span class="line">    if (token.reason) &#123;</span><br><span class="line">      // Cancellation has already been requested</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    token.reason = new Cancel(message);</span><br><span class="line">    resolvePromise(token.reason);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从这里我们可以看出CancelToken中含有一个promise，并且上面source中的c就是这里的cancel函数，所以我们使用的<code>source.cancel(&#39;取消请求传递这条消息&#39;);</code>就是这里的cancel函数，所以这里<code>source.cancel(&#39;取消请求传递这条消息&#39;);</code>最重要的就是执行<code>resolvePromise()</code>,这个<code>resolvePromise</code>是什么呢？其实就是this.promise中执行then中的回调函数，那这个then中的回调函数在哪里，在<code>axios/lib/adapters/xhr.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if(config.cancelToken)&#123;</span><br><span class="line">    // 具体是如何取消的，是在这个判断内定义的；</span><br><span class="line">    config.cancelToken.promise.then(function(cancel)&#123;</span><br><span class="line">        request.abort();</span><br><span class="line">        reject(cancel);</span><br><span class="line">        request = null;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">// 发送请求</span><br><span class="line">request.send(requestData);</span><br></pre></td></tr></table></figure></p>
+<p>看见了这段，就连接起来了，<code>resolvePromise()</code>就是要执行这里的then的回调函数，就达到了取消request的效果</p>
+<p>好了，总结一下：执行cancel是让token的promise变成成功，在真正发送请求之前，验证token.promise的状态是否已经变了，如果变了，就取消请求，就是这样一个简单的思想来进行取消请求的</p>
 
       
     </div>
@@ -361,9 +368,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/XSS/" rel="tag"># XSS</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/CSRF/" rel="tag"># CSRF</a>
+            <a href="/tags/axios/" rel="tag"># axios</a>
           
         </div>
       
@@ -376,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/10/跨域请求的几种实现方式/" rel="next" title="跨域请求的几种实现方式">
-                <i class="fa fa-chevron-left"></i> 跨域请求的几种实现方式
+              <a href="/2018/08/11/axios源码分析（2）之拦截器/" rel="next" title="Axios 源码分析（2）之拦截器">
+                <i class="fa fa-chevron-left"></i> Axios 源码分析（2）之拦截器
               </a>
             
           </div>
@@ -386,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/10/浅谈js对象的属性设置/" rel="prev" title="浅谈js对象的属性设置">
-                浅谈js对象的属性设置 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/11/axios源码分析（1）之请求/" rel="prev" title="Axios 源码分析（1）之请求">
+                Axios 源码分析（1）之请求 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网页前端常见的攻击方式和预防攻击的方法"><span class="nav-number">1.</span> <span class="nav-text">网页前端常见的攻击方式和预防攻击的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见攻击"><span class="nav-number">1.0.1.</span> <span class="nav-text">常见攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们该怎么做？"><span class="nav-number">1.0.2.</span> <span class="nav-text">我们该怎么做？</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#axios源码分析（3）之请求取消"><span class="nav-number">1.</span> <span class="nav-text">axios源码分析（3）之请求取消</span></a></li></ol></div>
             
 
           </div>
